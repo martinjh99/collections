@@ -8,15 +8,16 @@ const posts = await getCollection('data');
 
 <Layout>
 	<h1 class="text-5xl text-white text-center p-5">Data from a json file</h1>
-	 <div class="grid grid-cols-4 m-10 gap-2">
+	 <div class="grid grid-cols-3 m-5 gap-2">
   {
 	posts.map((p) => (
 		<Fragment>
-		<div class="text-amber-200 p-7">
-		<h1 class="text-3xl text-center pb-5">{p.data.title}</h1>
+		<div class=" p-7 border-2 border-white rounded-4xl bg-rose-500 text-white">
+		<h1 class="text-3xl pb-5 text-center">{p.data.title}</h1>
 		<img class="mb-5" src=`${p.data.img}`>
 		<div>{p.data.description}</div>
 		<div class="mt-1.5 text-sm">Maker: {p.data.maker}</div>
+		<a class="underline" href=`${p.data.url}`>{p.data.url}</a>
 		</div>
 
 		</Fragment>
