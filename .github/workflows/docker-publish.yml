@@ -54,6 +54,4 @@ jobs:
           target_repository: ghcr.io/martinjh99/test
           target_registry_username: ${{ github.actor }}
           target_registry_password: ${{ secrets.GITHUB_TOKEN }}
-          cache_repository: docker.pkg.github.com/${{ github.repository }}/my-image
-          cache_registry_username: ${{ github.repository_owner }}
-          cache_registry_password: ${{ secrets.GITHUB_TOKEN }}
+          
