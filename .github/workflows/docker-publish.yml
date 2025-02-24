@@ -44,7 +44,6 @@ jobs:
         uses: docker/login-action@v3.3.0
         with:
              registry: ghcr.io
-             username: martinjh99
-             password: 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
+             username: ${{ github.actor }}
+             password: ${{ secrets.GITHUB_TOKEN }}
              
-    
