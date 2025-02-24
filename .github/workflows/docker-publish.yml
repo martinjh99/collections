@@ -40,10 +40,15 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: Run Build
+        run: npm run build
+        
       - name: Docker Login
         uses: docker/login-action@v3.3.0
         with:
              registry: ghcr.io
              username: ${{ github.actor }}
              password: ${{ secrets.GITHUB_TOKEN }}
-             
+
+     
+      
