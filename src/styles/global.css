@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+	body{
+		background:black;
+        font-family: "Atma",serif;
+	}
+
+    h1{
+        font-family: "Montserrat",serif;
+        font-weight: 400;
+        font-style: normal;
+        
+    }

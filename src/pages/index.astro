@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import {getCollection} from "astro:content";
+const posts = await getCollection('data');
+
+---
+
+<Layout title="Data from json file">
+	<h1 class="text-5xl text-white text-center p-10">Data from a json file<br/>Cards from daisyui</h1>
+	 <div class="grid grid-cols-3 border-2">
+			{
+				posts.map((p) => (
+				<Fragment>
+					<div class="border-2 card-xs shadow-amber-600">
+					<div class="card-body">
+						<h1 class="card-title">{p.data.title}</h1>
+		  				<figure class="w-80"><img src=`${p.data.img}`></figure>
+		  				<p>{p.data.description}</p>
+					</div>
+	  </div>
+	  </Fragment>
+				) 
+			)
+			}
+	</div>
+</Layout>
