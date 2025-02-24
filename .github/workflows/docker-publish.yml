@@ -51,7 +51,7 @@ jobs:
       - name: Build container image
         uses: snapserv/action-container-builder@master
         with:
-          target_repository: ghcr.io/martinjh99/test
+          target_repository: ghcr.io/martinjh99/mywebsite
           target_registry_username: ${{ github.actor }}
           target_registry_password: ${{ secrets.GITHUB_TOKEN }}
           publish: true
