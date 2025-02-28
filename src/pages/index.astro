@@ -11,7 +11,7 @@ const posts = await getCollection('data');
 			{
 				posts.map((p) => (
 				<Fragment>
-					<div class="border-2 card-xs shadow-amber-600">
+					<div class="border-2 card-lg bg-rose-300">
 					<div class="card-body">
 						<h1 class="card-title">{p.data.title}</h1>
 		  				<figure class="w-80"><img src=`${p.data.img}`></figure>
