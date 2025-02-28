@@ -1,4 +1,4 @@
-name: Docker
+name: Create and Publish docker container
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -8,15 +8,13 @@ name: Docker
 on:
    push:
     branches: [ "main" ]
-    # Publish semver tags as releases.
-    tags: [ 'v*.*.*' ]
+
   
 env:
   # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
+  REPOSITORY: ghcr.io
   # github.repository as <account>/<repo>
-  IMAGE_NAME: ${{ github.repository }}
-
+  IMAGE_NAME: astro-site
 
 jobs:
   build:
@@ -25,11 +23,16 @@ jobs:
     permissions:
       contents: read
       packages: write
-
-  
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: "Set up QEMU"
+        uses: "docker/setup-qemu-action@v3"
+
+      - name: "Set up Docker Buildx"
+        uses: "docker/setup-buildx-action@v3"
 
       - name: Install Node
         uses: adamhamlin/checkout-node-project@v1
@@ -37,24 +40,33 @@ jobs:
     # Node.js version to install
           node-version: 22
 
-
       - name: Run Build
         run: npm run build
-        
-      - name: Docker Login
+
+      - name: Get sha tags
+        id: meta
+        uses:  docker/metadata-action@v5
+        with:
+          tags: |
+           type=sha
+        env:
+          DOCKER_METADATA_SHORT_SHA_LENGTH: 6
+
+      - name: Login
         uses: docker/login-action@v3.3.0
         with:
-             registry: ghcr.io
+             registry: ${{ env.REPOSITORY}}
              username: ${{ github.actor }}
-             password: ${{ secrets.GITHUB_TOKEN }}
+             password: ${{ secrets.GITHUB_TOKEN}}
 
-      - name: Build container image
-        uses: snapserv/action-container-builder@master
+
+      - name: "Build and push image tags"
+        uses: "docker/build-push-action@v5"
         with:
-          target_repository: ghcr.io/martinjh99/collections
-          target_registry_username: ${{ github.actor }}
-          target_registry_password: ${{ secrets.GITHUB_TOKEN }}
-          publish: true
-          tag_with_sha: true
-          
-          
+           context: "."
+           file: ./Dockerfile
+           platforms: "linux/amd64,linux/arm64"
+           push: true
+           tags: |
+               "${{ env.REPOSITORY}}/${{ github.repository }}/${{ env.IMAGE_NAME}}:latest"
+               "${{ env.REPOSITORY}}/${{ github.repository }}/${{ env.IMAGE_NAME}}:${{ steps.meta.outputs.tags }}"
