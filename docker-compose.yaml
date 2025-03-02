@@ -1,0 +1,6 @@
+services:
+    website_test:
+        ports:
+            - 8002:80
+        container_name: website2
+        image: ghcr.io/martinjh99/collections/website_test:latest
