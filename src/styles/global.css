@@ -1,12 +1,17 @@
+@import '@fontsource/amarante';
 @import "tailwindcss";
 
 
 	body{
-        font-family: "Atma",serif;
+		font-family: 'Amarante', system-ui;
 		/* background: linear-gradient(to right, rgb(23,80,23) 1%,black 10%) repeat; */
 		background-color: darkslategrey;
 		color: white;
 	}
+figure {
+	width: 200px;
+	height: 250px;
+}
 
 	mycard {
 		width:800px;
