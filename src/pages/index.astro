@@ -7,11 +7,11 @@ const posts = await getCollection('data');
 
 <Layout title="Data from json file">
 	<h1 class="text-5xl text-center p-6">Data from a json file<br/>Cards from daisyui</h1>
-	 <div class="grid grid-cols-3 p-6">
+	 <div class="grid grid-cols-3 p-6 gap-5">
 			{
 				posts.map((p) => (
 				<Fragment>
-					<card>
+					<card class="border-1 p-3">
 						<h1 class="text-2xl">{p.data.title}</h1>
 		  				<figure class="w-80"><img src=`${p.data.img}`></figure>
 		  				<p>{p.data.description}</p>
