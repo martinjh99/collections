@@ -1,8 +1,24 @@
 @import "tailwindcss";
-@plugin "daisyui";
+
 
 	body{
-
         font-family: "Atma",serif;
+		/* background: linear-gradient(to right, rgb(23,80,23) 1%,black 10%) repeat; */
+		background-color: darkslategrey;
+		color: white;
 	}
 
+	mycard {
+		width:800px;
+		color: white;
+		border-radius: 2em;
+		padding: 2em;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-right: -50%;
+		transform: translate(-50%, -50%);
+		box-shadow:#069619 3px 5px 10px;
+		border: 3px solid #006600
+	  }
+	  

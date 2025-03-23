@@ -12,13 +12,11 @@ const posts = await getCollection('data');
 			{
 				posts.map((p) => (
 				<Fragment>
-					<div class="card-lg">
-					<div class="card-body">
-						<h1 class="card-title">{p.data.title}</h1>
+					<card>
+						<h1 class="text-2xl">{p.data.title}</h1>
 		  				<figure class="w-80"><img src=`${p.data.img}`></figure>
 		  				<p>{p.data.description}</p>
-					</div>
-	 				</div>
+					</card>
 	  			</Fragment>
 				) 
 			)
