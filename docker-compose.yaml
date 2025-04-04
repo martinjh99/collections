@@ -1,6 +1,6 @@
 services:
-    website_test:
+    collections_test:
         ports:
             - 80:80
-        container_name: website2
-        image: ghcr.io/martinjh99/collections/website_test:latest
+        container_name: astro_collections_test
+        image: ghcr.io/martinjh99/collections/collections:latest

@@ -1,5 +1,4 @@
 FROM nginx:alpine
-LABEL MAINTAINER=martin@mjhooper.co.uk
-LABEL desc="This is my test website for using json files in Astro masde websites"
+RUN apk add bash
 COPY dist /usr/share/nginx/html
 
