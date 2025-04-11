@@ -2,24 +2,23 @@
 @import "tailwindcss";
 
 
+
+
 	body{
-		font-family: 'Amarante', system-ui;
-		/* background: linear-gradient(to right, rgb(23,80,23) 1%,black 10%) repeat; */
-		background-color: darkslategrey;
+	 	font-family: 'Amarante', system-ui; 
+		background: linear-gradient(to right, rgb(23,80,23) 1%,black 10%) repeat; 
+		/*background-color: darkslategrey;*/
+		height:100vh;
 		color: white;
 	}
 
-	mycard {
-		width:800px;
-		color: white;
-		border-radius: 2em;
-		padding: 2em;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		margin-right: -50%;
-		transform: translate(-50%, -50%);
-		box-shadow:#069619 3px 5px 10px;
-		border: 3px solid #006600
+	button {
+		padding: 1rem;
+		box-shadow:#069619 3px 5px 10px; 
+		border: 2px solid #006600;
+		border-radius: 10px;
 	  }
 	  
+	  button:hover{
+		background: #05ed05
+	  }
