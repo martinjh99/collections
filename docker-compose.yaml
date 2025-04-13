@@ -2,5 +2,5 @@ services:
     collections_test:
         ports:
             - 80:80
-        container_name: astro_collections_test
+        container_name: test
         image: ghcr.io/martinjh99/collections/collections:latest
