@@ -11,8 +11,8 @@ vite:{
    experimental: {
       fonts: [{
          provider: fontProviders.google(),
-         name: "Limelight",
-         cssVariable: "--font-limelight"
+         name: "Comic Neue",
+         cssVariable: "--font-comic"
      }]
 }
 

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import {getCollection} from "astro:content";
 
+
 export async function getStaticPaths({ paginate }) {
     const posts = await getCollection('data');
     return paginate(posts,{ pageSize: 3 });
