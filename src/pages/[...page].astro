@@ -5,12 +5,10 @@ import {getCollection} from "astro:content";
 
 export async function getStaticPaths({ paginate }) {
     const posts = await getCollection('data');
-    return paginate(posts,{ pageSize: 3 });
+    return paginate(posts,{ pageSize: 6 });
 }
 
 const { page } = Astro.props;
-
-
 ---
 <Layout title="Data from json file">
 	<h1 class="text-5xl text-center p-6">Data from a json file</h1>
@@ -29,9 +27,9 @@ const { page } = Astro.props;
 			}
 	</div>
 	<div class="flex gap-5 justify-center">
-		{page.url.prev ? <a class="button p-3 rounded-md bg-rose-500 text-white" href={page.url.prev}>Previous</a> : <span class="text-gray-500 p-3 rounded-md block bg-gray-300">Previous</span>}
-		{page.url.next ? <a class="p-3 rounded-md bg-rose-500 text-white" href={page.url.next}>Next</a> : <span class="text-gray-500 p-3 rounded-md block bg-gray-300">Next</span>}
-
+		{page.url.prev ? <a class="button p-3 rounded-md bg-amber-500 text-white" href={page.url.prev}>Previous</a> : <span class="text-gray-500 p-3 rounded-md block bg-gray-300">Previous</span>}
+		<span class="text-amber-700">{page.currentPage} of {page.lastPage}</span>
+		{page.url.next ? <a class="p-3 rounded-md bg-amber-500 text-white" href={page.url.next}>Next</a> : <span class="text-gray-500 p-3 rounded-md block bg-gray-300">Next</span>}
 	</div>
 
 </Layout>
