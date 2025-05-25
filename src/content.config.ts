@@ -2,7 +2,7 @@ import { defineCollection, z } from "astro:content";
 import { file } from "astro/loaders";
 
 const data = defineCollection({
-    loader: file("src/data/product.json"),
+    loader: file("src/data/rock.json"),
 /*     schema: z.object({
         id: z.string(),
         maker: z.string(),
