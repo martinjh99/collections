@@ -23,3 +23,8 @@ h1{
 	  button:hover{
 		background: #ffe100
 	  }
+
+	  .container {
+		columns:2;
+		column-gap: 50px;
+	  }
