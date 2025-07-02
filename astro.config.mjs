@@ -8,18 +8,18 @@ vite:{
    plugins: [tailwindcss()],
    },
    /* build: { format: 'file' }, */
-   experimental: {
-      fonts: [{
-         provider: fontProviders.google(),
-         name: "Comic Neue",
-         cssVariable: "--font-comic"
-      },
-         {
-            provider: fontProviders.google(),
-            name: "Amaranth",
-            cssVariable: "--font-Amaranth"
-         }
-      ]
-}
+   // experimental: {
+   //    fonts: [{
+   //       provider: fontProviders.google(),
+   //       name: "Comic Neue",
+   //       cssVariable: "--font-comic"
+   //    },
+   //       {
+   //          provider: fontProviders.google(),
+   //          name: "Amaranth",
+   //          cssVariable: "--font-Amaranth"
+   //       }
+   //    ]
+//}
 
 });
