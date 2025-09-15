@@ -67,7 +67,6 @@ jobs:
            file: ./Dockerfile
            platforms: "linux/amd64,linux/arm64"
            push: true
-           tags: |
- #              "${{ env.REPOSITORY}}/${{ github.repository }}:latest"
+           tags: | 
                 "${{ github.repository}}:latest"
  
