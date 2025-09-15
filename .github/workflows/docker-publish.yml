@@ -69,5 +69,5 @@ jobs:
            push: true
            tags: |
  #              "${{ env.REPOSITORY}}/${{ github.repository }}:latest"
-                "${{ github.repository}}:latest
+                "${{ github.repository}}:latest"
  
