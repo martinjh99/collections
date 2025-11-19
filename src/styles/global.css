@@ -7,7 +7,7 @@ h1{
 
 	body{
 		/*background: linear-gradient(to right, rgb(23,80,23) 1%,black 10%) repeat; */ 
-		background-color: darkslategrey;
+		background-color: #673161;
 		height:100vh;
 		color: white;
 		font-family: var(--font-Amaranth);
